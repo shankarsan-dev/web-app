@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,5 +25,8 @@ Route::delete("/students/delete/{id}",[StudentController::class,"deleteStudent"]
 Route::get("/students/{name}",[StudentController::class,"searchStudent"]);
 
 Route::get("/members",[MemberController::class,"index"]);
+
+Route::post("/signup",[AuthController::class,"signup"]);
+Route::post("/login",[AuthController::class,"login"]);
 
 
